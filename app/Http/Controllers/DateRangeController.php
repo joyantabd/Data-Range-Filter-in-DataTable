@@ -10,7 +10,7 @@ class DateRangeController extends Controller
 {
     function index(Request $request)
     {
-        $users = Auth::user(1);
+
         if(request()->ajax())
         {
             if(!empty($request->from_date))
@@ -26,7 +26,7 @@ class DateRangeController extends Controller
             }
             return datatables()->of($data)->make(true);
         }
-        return view('daterange',compact('users'));
+        return view('daterange');
     }
 }
 
